@@ -1,0 +1,119 @@
+@import "bourbon", "grid-settings","neat", "jquery.fullPage";
+$use-fadeIn: true;
+$use-bounceInDown: true;
+@import "../bower_components/animate-sass/animate";
+html, body {
+    height: 100%;
+    font-size: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    -webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+}
+.animated {
+    @include animate-prefixer(animation-duration, $base-duration);
+    @include animate-prefixer(animation-fill-mode, both);
+    &.hinge {
+        @include animate-prefixer(animation-duration, $base-duration * 2);
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+#section1 {
+    background: #000 url('../images/patterns/1.jpg') left top;
+}
+#section2 {
+    background: #000 url('../images/patterns/2.jpg') left top;
+}
+#section3 {
+    background: #000 url('../images/patterns/3.jpg') left top;
+}
+#section4 {
+    background: #000 url('../images/patterns/4.jpg') left top;
+}
+.contentwrap {
+    @include outer-container();
+    position: relative;
+    height: 100%;
+    
+    img{
+		@include media($mobile) {
+			max-height: 340px;
+		}
+
+		@include media($height) {
+			max-height: 440px;
+		}
+    }
+}
+.content {
+    @include span-columns(12);
+    position: absolute;
+    bottom: 0;
+    background: #333;
+    index: 10;
+    margin-bottom: 3em;
+    font-size: 1rem;
+}
+.contentbg {
+    @include span-columns(12);
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    index: 1;
+    margin-bottom: 3em;
+}
+.scrollbtn {
+    @include span-columns(12);
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    index: 1;
+}
+.scrolllink, .toplink {
+    opacity: .8;
+    &:hover {
+        opacity: 1;
+    }
+}
+.toplink img {
+    -moz-transform: rotate(180deg);
+    /* Firefox 3.6 Firefox 4 */
+    
+    -webkit-transform: rotate(180deg);
+    /* Safari */
+    
+    -o-transform: rotate(180deg);
+    /* Opera */
+    
+    -ms-transform: rotate(180deg);
+    /* IE9 */
+    
+    transform: rotate(180deg);
+    /* W3C */
+}
+#top {
+    @include span-columns(12);
+    position: absolute;
+    top: 0;
+}
+.center {
+    text-align: center;
+}
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 4px 0 rgba(255, 255, 255, 0.4);
+}
+.left, .right {
+    @include span-columns(6 of 12);
+    padding: 1em;
+	@include media($mobile) {
+	  @include span-columns(12 of 12);
+	  font-size: .8rem;
+	}
+}
