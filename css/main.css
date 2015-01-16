@@ -401,6 +401,13 @@ h1 {
   color: #fff;
   text-shadow: 0 4px 0 rgba(255, 255, 255, 0.4); }
 
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3em;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 4px 0 rgba(255, 255, 255, 0.4); }
+
 .left, .right {
   float: left;
   display: block;
@@ -418,3 +425,10 @@ h1 {
       font-size: .8rem; }
       .left:last-child, .right:last-child {
         margin-right: 0; } }
+
+@media screen and (min-width: 0) and (max-width: 40em) {
+  .fp-controlArrow.fp-prev {
+    border-width: 8.5px 4px 8.5px 0; }
+
+  .fp-controlArrow.fp-next {
+    border-width: 8.5px 0 8.5px 4px; } }
